@@ -1,0 +1,401 @@
+@import 'foundation/settings';
+@import 'foundation/foundation';
+@import 'font-awesome/font-awesome';
+@include foundation-everything;
+@font-face {
+ font-family: 'Museo Sans Cyrl 300';
+ font-style: normal;
+ font-weight: normal;
+ src: local('../fonts/Museo Sans Cyrl 300'), url('../fonts/MuseoSansCyrl_0.woff') format('woff');
+}
+@font-face {
+ font-family: 'Museo Sans Cyrl 500';
+ font-style: normal;
+ font-weight: normal;
+ src: local('../fonts/Museo Sans Cyrl 500'), url('../fonts/MuseoSansCyrl_1.woff') format('woff');
+}
+@font-face {
+ font-family: 'Museo Sans Cyrl 900';
+ font-style: normal;
+ font-weight: normal;
+ src: local('../fonts/Museo Sans Cyrl 900'), url('../fonts/MuseoSansCyrl_3.woff') format('woff');
+}
+header {
+	padding-top: 25px;
+	.logo {
+		background: url(../img/logo.png) no-repeat;
+		display: inline-block;
+		vertical-align: top;
+		width: 124px;
+		height: 60px;
+		text-indent: -9999px;
+		@include breakpoint(medium down) {margin-bottom: 1em;}
+	}
+	nav {
+		display:inline-block;
+		background:$primary-color;
+		border-radius:18px;
+		margin-top: 13px;
+		margin-left: 30px; 
+			@include breakpoint(medium down) {
+				margin-left: 0;
+			}
+		ul {
+			margin:0;
+			list-style: none;
+			overflow: hidden;
+			display: flex;
+			padding: 5px 24px 6px;
+			@include breakpoint(medium down) {
+				padding-left: 12px;
+				padding-right: 12px;
+			}
+			@include breakpoint(small down) {
+						display: block;
+					}
+			li {
+				
+				&:after {
+					content:"";
+					width: 3px;
+					height: 3px;
+					border-radius:3px;
+					background:#fff;
+					display: inline-block;
+					vertical-align: middle;
+					margin:0 25px;
+					@include breakpoint(medium down) {
+						margin-left: 10px;
+						margin-right: 10px;
+					}
+					@include breakpoint(small down) {
+						display: none;
+					}
+				}
+				&:last-child:after {display: none;}
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+	.button {
+		border-radius:18px;
+		margin-top: 13px;
+		padding:9px 24px 11px 52px;
+		background-image: url(../img/forma-1.png);
+		background-repeat: no-repeat;
+		background-position: 18px 50%;
+	}
+	.phones-block {
+			margin-top: 7px;
+			padding-bottom: 24px;
+			padding-top: 2px;
+			text-align: right;
+			@include breakpoint(large) {padding-right: 15px;}
+			@include breakpoint(small down) {text-align: left;}
+			p {
+				font-family: 'Museo Sans Cyrl 900';
+				margin-bottom: 0;
+				font-size: 1.2rem;
+				line-height: 1.2;
+			}
+			a {
+				color: #000;
+				display: inline-block;
+				font-size: 0.9rem;
+				border-bottom: 1px dashed #000;
+			}
+		}
+} //header
+.info-block {
+	padding: 80px 0px 68px;
+    margin-left: -10px;
+    @include breakpoint(medium down) {
+    	padding-top: 0;
+    	margin-left:0
+    }
+	h1 {
+			color:$primary-color;
+			line-height: 1.3;
+			margin-bottom: 0.9rem;
+		}
+	p {
+		font-size:1.1rem;
+	}
+	.rect-wrap {
+		display:flex;
+		align-items:center;
+		margin-top:25px;
+		.rect {
+			min-width:94px;
+			height:94px;
+			display:inline-block;
+			background-color: #eeedda;
+			vertical-align: top;
+		}
+		.earth {
+			background-image:url(../img/earth.png);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+		.pack {
+			background-image:url(../img/pack.png);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+		.sm-head {
+			margin-left:31px;
+		}
+	}
+
+}//info-block
+.b-bottom {
+	border-bottom: 1px solid #eeedda;
+	margin-bottom: 50px;
+}
+.info-block-img	{
+	margin-top: 21px;
+	@include breakpoint(small down) {margin:0;}
+	}
+.sm-head {
+	font-family: 'Museo Sans Cyrl 900';
+	text-transform: uppercase;
+}
+main .column {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		&:hover {
+			box-shadow: 1px 1px 1px #ccc; 
+		}
+	}
+.sidebar {
+	background:#eeedda;
+	position: relative;
+	border-radius:6px;
+	padding:18px 0 33px;
+	margin-top: 20px; 
+	margin-left: -10px;
+	margin-bottom: 2rem;
+	@include breakpoint(medium down) {
+    	margin-left:0
+    }
+	&:after {
+	  content: "";
+	  background: url(../img/organic-vege.png) no-repeat;
+	  opacity: 0.3;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  position: absolute;
+	  z-index: 1;   
+	  background-size: cover;
+}
+	ul {
+		margin:0;
+		list-style: none;
+		position: relative;
+		z-index: 2;
+	}
+	.sm-head {
+		margin-bottom: 17px;
+		padding:0 34px;
+		display:block;
+		position: relative;
+		z-index:2;
+	}
+	a {
+		padding:0px 34px;
+		display: block;
+		line-height:2.2;
+		&:hover, 
+		&.active {
+			background:$primary-color;
+			color:#fff;
+		}
+	}
+} //sidebar
+.product {
+	@include breakpoint(small down) {
+    	text-align:center;
+    }
+	.sm-head {
+		display:block;
+		margin-top: 27px;
+
+		
+	}
+	p {
+		font-size:0.9rem;
+		line-height: 1.3;
+
+	}
+	.prod-footer {
+		display: flex;
+		margin-top:-4px; 
+		@include breakpoint(small down) {
+    	justify-content:center;
+    }
+		.info {
+			text-indent: -99999px;
+			background-image:url(../img/i.png);
+			background-color: #eeedda;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			min-width: 29px;
+			height: 29px;
+			border-radius:4px;
+			margin-right: 10px;
+		}
+		.button {
+			font-family: 'Museo Sans Cyrl 900'; 
+			padding:8px 30px 6px 54px;
+			background-image:url(../img/carret.png);
+			background-repeat: no-repeat;
+			background-position: 20px 50%;
+			border-radius:4px;
+			@include breakpoint(medium down) {
+    		padding-right: 10px;
+    }
+	}
+}
+}//products
+.pre-footer {
+	background: #95C221 url('../img/green-bg.png') no-repeat; 
+	margin-top:93px;
+	@include breakpoint(medium down) {background: #95C221;padding: 45px 0 ;}
+	color: #FFF;
+	padding: 104px 0 84px;
+	overflow: hidden;
+	h4 {
+		font-family: 'Museo Sans Cyrl 900';
+		font-size: 1.95rem;
+		line-height: 1.25; 
+	}
+	p {
+		font-size: 1.1rem;
+		line-height: 1.3;
+		margin-bottom: 29px;
+	}
+	form {
+		position: relative; 
+		&:after {
+			background: url('../img/arrow.png') no-repeat;
+			display: block;
+			content: '';
+			width: 114px;
+			height: 157px;
+			position: absolute;
+			right: -90px;
+			top: -140px;
+			@include breakpoint(medium down) {display: none;}
+		}
+	}
+	input {
+		background: #95C221;
+		border-color: #fff;
+	}
+	input::-webkit-input-placeholder {color:#fff;}
+	.button {
+		background: #FFF05F;
+		color: #000;
+		padding: 0.80em 1em;
+	}
+}
+.main-footer {
+	color: #FFF;
+	background: #30382A;
+	a {
+		color: #FFF;
+		}
+	.logo {
+		background: url('../img/logo-footer.png') no-repeat;
+		text-indent: -9999px;
+		display: inline-block;
+		width: 124px;
+		height: 60px;
+		margin-top: 10px;
+	}
+	nav {
+		margin-top: 26px;
+		vertical-align: top;
+		@include breakpoint(large) {margin-left: 42px;}
+		ul {
+			margin: 0;
+			list-style: none;
+			display: flex;
+			@include breakpoint(medium down) {
+				display: block;
+				margin-bottom: 20px;
+				}
+			li {
+				@include breakpoint(medium down) {display: block;}
+				a {
+					display: inline-block;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				&:after {
+					content: '';
+					display: inline-block;
+					vertical-align: middle;
+					background: #fff;
+					width: 3px;
+					height: 3px;
+					margin: 0 26px;
+					@include breakpoint(medium down) {display: none;}
+					}
+					&:last-child {
+						&:after {display: none;}
+					}
+			}
+		}
+	}
+	.phones-block {
+		padding-bottom: 24px;
+		padding-top: 2px;
+		text-align: right;
+		@include breakpoint(large) {padding-right: 15px;}
+		@include breakpoint(medium down) {padding-top: 26px;}
+		@include breakpoint(small down) {text-align: left;}
+		p {
+			font-family: 'Museo Sans Cyrl 900';
+			margin-bottom: 0;
+			font-size: 1.2rem;
+			line-height: 1.2;
+		}
+		a {
+			display: inline-block;
+			font-size: 0.9rem;
+			border-bottom: 1px dashed #fff;
+		}
+	}
+	.sub-footer {
+		background: #181E14;
+		font-size: 0.69rem;
+		.column {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		.next-page-logo {
+			text-align: center;
+			border: 1px solid #514f4f;
+			border-width: 0 1px;
+			a {
+				display: inline-block;
+				padding: 7px 0;
+				white-space: nowrap;
+				span {
+					text-indent: -9999px;
+					background: url(../img/nextpage.png);
+					display: inline-block;
+					width: 98px;
+					height: 15px;
+					@include breakpoint(large) {margin-left: 38px;}
+				}
+			}
+		}
+	}
+}
